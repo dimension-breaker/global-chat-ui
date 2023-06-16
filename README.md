@@ -1,4 +1,6 @@
 ng build --output-path docs --base-href /global-chat-ui/
+have this on line 6 in docs/index.html
+<base href="/global-chat-ui/">
 
 # GlobalChatUi
 
