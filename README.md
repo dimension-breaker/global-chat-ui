@@ -1,3 +1,5 @@
+ng build --output-path docs --base-href /global-chat-ui/
+
 # GlobalChatUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
