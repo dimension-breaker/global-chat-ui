@@ -8,4 +8,4 @@ ng build --output-path docs --base-href ./global-chat-ui/
 <base href="/global-chat-ui/">
 ```
 3. After push and check, visit<br>
-[https://solidwaterslayer.github.io/global-chat-ui/](https://solidwaterslayer.github.io/global-chat-ui/)
+<a href="https://solidwaterslayer.github.io/global-chat-ui/" target="_blank">https://solidwaterslayer.github.io/global-chat-ui/</a>
