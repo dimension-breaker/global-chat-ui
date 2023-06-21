@@ -1,3 +1,14 @@
 <router-outlet />
 
-<h1 class="font-bold text-3xl underline">Hello world!</h1>
+<div class="flex flex-row gap-2 h-screen items-stretch p-2">
+  <div [ngStyle]="{ flex: '0 1 20%' }"></div>
+
+  <div class="flex flex-col gap-2" [ngStyle]="{ flex: '0 1 60%' }">
+    <div class="flex flex-col gap-2 min-h-0 overflow-auto" [ngStyle]="{ flex: '0 1 auto' }" #scroll>
+      <div *ngFor="let message of messages">{{ message }}</div>
+    </div>
+    <input #message (keyup.enter)="messages.push(message.value); message.value = ''">
+  </div>
+
+  <div [ngStyle]="{ flex: '0 1 20%' }"></div>
+</div>
