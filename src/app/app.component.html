@@ -1,14 +1,24 @@
 <router-outlet />
+<style>
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+</style>
 
-<div class="flex flex-row gap-2 h-screen items-stretch p-2">
-  <div [ngStyle]="{ flex: '0 1 20%' }"></div>
-
-  <div class="flex flex-col gap-2" [ngStyle]="{ flex: '0 1 60%' }">
-    <div class="flex flex-col gap-2 min-h-0 overflow-auto" [ngStyle]="{ flex: '1 1 auto' }" #scroll>
-      <div *ngFor="let message of messages; let i = index" [ngStyle]="{ marginTop: i === 0 ? 'auto' : '0' }">{{ message }}</div>
+<div class="flex flex-rol gap-2 h-screen p-2" [ngStyle]="{ flex: '1 1 auto' }">
+  <div class="w-2 sm:w-auto z-10">
+    <div class="bg-white border-2 duration-200 h-full overflow-hidden" (click)="isExpanded = !isExpanded" [ngStyle]="{ 'max-width': isExpanded ? '256px' : '8px', 'min-width': isExpanded ? '256px' : '8px' }">
+      hello world
     </div>
-    <input #message (keyup.enter)="messages.push(message.value); message.value = ''">
   </div>
 
-  <div [ngStyle]="{ flex: '0 1 20%' }"></div>
+  <div class="flex flex-col gap-2 h-full min-w-0" [ngStyle]="{ flex: '1 1 auto' }">
+    <div class="flex flex-col gap-2 overflow-auto" [ngStyle]="{ flex: '1 1 auto' }" #scroll>
+      <div class="border-2 p-2 w-fit" *ngFor="let message of messages; let i = index" [ngStyle]="{ marginTop: i === 0 ? 'auto' : undefined }">
+        <div class="font-bold">bob</div>
+        <div>{{ message }}</div>
+      </div>
+    </div>
+    <input class="border-2 focus:outline-none p-2" #message (keyup.enter)="message.value && messages.push(message.value); message.value = ''" placeholder="Send A Message">
+  </div>
 </div>

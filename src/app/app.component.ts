@@ -1,9 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core'
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({ selector: 'app-root', templateUrl: './app.component.html' })
 export class AppComponent {
-  @ViewChild('scroll') scroll!: ElementRef
+  isExpanded = false;
   messages: string[] = []
+  @ViewChild('scroll') scroll!: ElementRef
 
   ngAfterViewChecked() {
     if (!this.scroll) return
@@ -15,3 +16,6 @@ export class AppComponent {
     this.scroll.nativeElement.scrollTop = this.scroll.nativeElement.scrollHeight
   }
 }
+
+// add variables for space, border, color, and font
+// add sidebar: 0) user list 1) settings
