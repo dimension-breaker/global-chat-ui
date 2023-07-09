@@ -8,7 +8,7 @@
   <div class="w-2 sm:w-auto z-10">
     <div class="bg-white border-2 duration-200 flex flex-col h-full overflow-hidden" (click)="isExpanded = !isExpanded" [ngStyle]="{ 'max-width': isExpanded ? '256px' : '16px', 'min-width': isExpanded ? '256px' : '16px' }">
       <div [ngStyle]="{ flex: '1 1 auto' }"></div>
-      <div class="p-2">
+      <div class="p-2" (click)="isExpanded && $event.stopPropagation()">
         <fa-icon class="block hover:bg-slate-50 leading-4 p-2 w-fit" [icon]="faGear"/>
       </div>
     </div>
