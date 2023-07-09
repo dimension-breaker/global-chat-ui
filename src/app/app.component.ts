@@ -1,8 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({ selector: 'app-root', templateUrl: './app.component.html' })
 export class AppComponent {
-  isExpanded = false;
+  faGear = faGear
+  isExpanded = false
   messages: string[] = []
   @ViewChild('scroll') scroll!: ElementRef
 
@@ -16,6 +18,3 @@ export class AppComponent {
     this.scroll.nativeElement.scrollTop = this.scroll.nativeElement.scrollHeight
   }
 }
-
-// add variables for space, border, color, and font
-// add sidebar: 0) user list 1) settings
