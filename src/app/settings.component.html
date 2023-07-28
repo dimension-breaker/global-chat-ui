@@ -1,0 +1,8 @@
+<div class="p-2" (click)="$event.stopPropagation()">
+  <fa-icon class="block hover:bg-gray-200 p-2 w-fit" (click)="showDialog = !showDialog" [icon]="faGear" [ngStyle]="{ lineHeight: 0 }"/>
+</div>
+<dialog class="border-2 h-1/2 inset-2/4 w-1/2" (click)="$event.stopPropagation()" [ngStyle]="{ translate: '-50%' }" [open]="showDialog" #settings>
+  <input class="border-2 focus:outline-none h-12 p-2">
+  <fa-icon class="p-2 w-fit" [icon]="faLongArrowAltRight" [ngStyle]="{ lineHeight: 0 }"/>
+  <input class="border-2 focus:outline-none h-12 p-2">
+</dialog>
