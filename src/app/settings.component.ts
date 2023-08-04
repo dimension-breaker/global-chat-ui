@@ -9,8 +9,8 @@ export class SettingsComponent {
   showDialog = false
 
   @HostListener('document:click', ['$event'])
-  clickout(event: any) {
-    if(!this.settings.nativeElement.contains(event.target)) {
+  documentClick(pointerEvent: PointerEvent) {
+    if(!this.settings.nativeElement.contains(pointerEvent.target)) {
       this.showDialog = false
     }
   }
