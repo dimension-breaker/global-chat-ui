@@ -1,4 +1,4 @@
-*This project is in progress.
+*Warning: this project is in progress.
 
 ### Running Instance
 https://solidwaterslayer.github.io/global-chat-ui/
