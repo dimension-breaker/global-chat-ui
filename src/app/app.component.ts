@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core'
 
 @Component({ selector: 'app-root', template: `
 <div class="flex flex-rol gap-2 h-screen p-2" [ngStyle]="{ flex: '1 1 auto' }">
@@ -14,7 +14,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 
   <div class="flex flex-col gap-2 h-full min-w-0" [ngStyle]="{ flex: '1 1 auto' }">
     <div class="flex flex-col gap-2 h-full overflow-auto" #scroll>
-      <div class="border-2 flex flex-col gap-2 p-2 w-fit" *ngFor="let message of messages; let i = index" [ngStyle]="{ marginTop: i === 0 ? 'auto' : undefined }">
+      <div class="border-2 flex flex-col gap-2 p-2 w-fit" *ngFor="let message of messages; let i = index" [ngStyle]="{ marginTop: i === 0 ? 'auto' : undefined, 'min-width': '128px' }">
         <div class="font-bold">bob</div>
         <div>{{ message }}</div>
       </div>

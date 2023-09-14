@@ -1,11 +1,11 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { faGear, faLongArrowAltRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core'
+import { faGear, faLongArrowAltRight, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 @Component({ selector: 'settings', template: `
 <div class="p-2" (click)="$event.stopPropagation()">
-  <fa-icon class="block cursor-pointer hover:bg-gray-200 p-2 w-fit" (click)="showDialog = !showDialog" [icon]="faGear" (keydown.enter)="showDialog = !showDialog; $event.stopPropagation();" [ngStyle]="{ lineHeight: 0 }" tabindex="0" />
+  <fa-icon class="block cursor-pointer hover:bg-gray-200 p-2 w-fit" (click)="showDialog = !showDialog" [icon]="faGear" (keydown.enter)="showDialog = !showDialog; $event.stopPropagation()" [ngStyle]="{ lineHeight: 0 }" tabindex="0" />
 </div>
-<dialog class="border-2 h-1/2 inset-2/4 p-0 w-1/2" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation();" [ngStyle]="{ translate: '-50%' }" [open]="showDialog" #settings>
+<dialog class="border-2 h-1/2 inset-2/4 p-0 w-1/2" (click)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()" (keydown.esc)="showDialog = false" [ngStyle]="{ translate: '-50%' }" [open]="showDialog" #settings>
   <div class="flex flex-row h-full">
     <div [ngStyle]="{ flex: '0 1 25%' }">
       <div class="bg-gray-100 cursor-pointer hover:bg-gray-200 p-2" tabindex="0">Text Replacements</div>
@@ -39,11 +39,3 @@ export class SettingsComponent {
     }
   }
 }
-
-/*
-TODO
-add esc
-esc when text box is focused
-stop propogation all together
-add min width to speech bubble
-*/
