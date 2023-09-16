@@ -5,10 +5,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings.component';
+import { TextReplacementsComponent } from './text-replacements';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, SettingsComponent],
+  declarations: [AppComponent, SettingsComponent, TextReplacementsComponent],
   imports: [AppRoutingModule, BrowserModule, FormsModule, FontAwesomeModule],
   providers: []
 })

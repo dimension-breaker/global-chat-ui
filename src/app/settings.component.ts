@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core'
-import { faGear, faLongArrowAltRight, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faGear } from '@fortawesome/free-solid-svg-icons'
 
 @Component({ selector: 'settings', template: `
 <div class="p-2" (click)="$event.stopPropagation(); showDialog = false">
@@ -11,24 +11,14 @@ import { faGear, faLongArrowAltRight, faPlus } from '@fortawesome/free-solid-svg
       <div class="bg-gray-100 cursor-pointer hover:bg-gray-200 p-2" tabindex="0">Text Replacements</div>
     </div>
     <div class="border-r-2"></div>
-    <div class="flex flex-col gap-2 p-2" [ngStyle]="{ flex: '0 1 75%' }">
-      <div class="flex flex-rol items-center justify-between">
-        <strong>Text Replacements</strong>
-        <fa-icon class="block cursor-pointer hover:bg-gray-200 p-2 w-fit" [icon]="faPlus" [ngStyle]="{ lineHeight: 0 }"/>
-      </div>
-      <div class="overflow-auto" [ngStyle]="{ flex: '1 1 auto' }">
-        <div class="cursor-pointer hover:bg-gray-200 p-2" *ngFor="let textReplacement of [{ replacement: 'my bad', text: 'mb' }, { replacement: 'shut the firetruck up', text: 'hi' }, { replacement: 'no', text: 'yes' }]" tabindex="0">
-          {{textReplacement.text}} -> {{textReplacement.replacement}}
-        </div>
-      </div>
+    <div [ngStyle]="{ flex: '0 1 75%' }">
+      <text-replacements />
     </div>
   </div>
 </dialog>
 ` })
 export class SettingsComponent {
   faGear = faGear
-  faLongArrowAltRight = faLongArrowAltRight
-  faPlus = faPlus
   @ViewChild('settings') settings!: ElementRef
   showDialog = false
 
