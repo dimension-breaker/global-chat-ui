@@ -24,9 +24,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core'
 </div>
 ` })
 export class AppComponent {
-  isExpanded = false
+  isExpanded = true
   messages: string[] = []
-  @ViewChild('scroll') scroll!: ElementRef
+  @ViewChild('scroll') scroll?: ElementRef
 
   ngAfterViewChecked() {
     if (!this.scroll) return

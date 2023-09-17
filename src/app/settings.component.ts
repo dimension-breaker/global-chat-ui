@@ -20,7 +20,7 @@ import { faGear } from '@fortawesome/free-solid-svg-icons'
 export class SettingsComponent {
   faGear = faGear
   @ViewChild('settings') settings!: ElementRef
-  showDialog = false
+  showDialog = true
 
   @HostListener('document:click', ['$event'])
   documentClick(pointerEvent: PointerEvent) {
